@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #2424b6;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    display: flex;
+    min-height: 100vh;
+}
+
+.form{
+    background-color: aliceblue;
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    padding: 4.5em 2em;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.title{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.form__container{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: grid;
+    margin-top: 3em;
+    gap: 2.5em;
+}
+
+.form__group{
+    position: relative;
+    color: rgb(133, 128, 128);
+}
+
+.form__input{
+    width: 100%;
+    padding: .6em .3em;
+    font-size: 1em;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label{
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: #444cf7;
+}
+
+.form__label{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 5px;
+    transform: translateY(10px);
+    transition: transform .5s, color .3s;
+}
+
+.form__line{
+    background-color: #444cf7;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+
+.form__input:focus ~ .form__line,
+.form__input:not(:placeholder-shown) ~ .form__line{
+    transform: scale(1);
+}
+
+.btn{
+    width: 100%;
+    height: 3rem;
+    color: rgb(72, 110, 144);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: none;
+    background: none;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease all;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+
+.btn span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.btn::after{
+    content: "";
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: none;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transition: .7s ease-in-out all;
+    border-radius: 100px;
+    transform-origin: center;
+}
+
+.btn:hover::after{
+    transform: scale(100);
+    background: red;
+}
+
+
